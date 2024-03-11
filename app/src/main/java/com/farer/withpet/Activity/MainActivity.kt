@@ -1,10 +1,11 @@
-package com.farer.withpet
+package com.farer.withpet.Activity
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.farer.withpet.R
 import com.farer.withpet.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
