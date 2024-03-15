@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardElevation="4dp"
+    app:cardCornerRadius="4dp"
+    app:contentPadding="16dp"
+    android:layout_margin="8dp"
+    android:backgroundTint="@color/white">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_place_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="장소명"/>
+        <TextView
+            android:id="@+id/tv_road_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="서울시 광진구 아차산로 000"
+            android:layout_below="@id/tv_place_name"/>
+
+    </RelativeLayout>
+
+</com.google.android.material.card.MaterialCardView>

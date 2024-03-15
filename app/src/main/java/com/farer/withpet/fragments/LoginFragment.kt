@@ -1,15 +1,15 @@
-package com.farer.withpet.Fragment
+package com.farer.withpet.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.farer.withpet.databinding.FragmentSearchBinding
+import com.farer.withpet.databinding.FragmentLoginBinding
 
-class SearchFragment : Fragment() {
+class LoginFragment : Fragment() {
 
-    private val binding by lazy { FragmentSearchBinding.inflate(layoutInflater) }
+    private val binding by lazy { FragmentLoginBinding.inflate(layoutInflater) }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -18,5 +18,4 @@ class SearchFragment : Fragment() {
     ): View? {
         return binding.root
     }
-
 }

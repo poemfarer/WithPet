@@ -1,15 +1,15 @@
-package com.farer.withpet.Fragment
+package com.farer.withpet.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.farer.withpet.databinding.FragmentListBinding
+import com.farer.withpet.databinding.FragmentMyaccountBinding
 
-class ListFragment : Fragment() {
+class MyAccountFragment : Fragment() {
 
-    private val binding by lazy { FragmentListBinding.inflate(layoutInflater) }
+    private val binding by lazy { FragmentMyaccountBinding.inflate(layoutInflater) }
 
     override fun onCreateView(
         inflater: LayoutInflater,
