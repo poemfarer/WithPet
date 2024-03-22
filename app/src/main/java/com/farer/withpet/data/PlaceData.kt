@@ -19,4 +19,5 @@ data class Place(
     @SerializedName("휴무일") var closedDays:String,
     @SerializedName("운영시간") var openTime:String,
     @SerializedName("주차 가능여부") var parking:String,
+    @SerializedName("반려동물 동반 가능정보") var ispermit:String,
 )
