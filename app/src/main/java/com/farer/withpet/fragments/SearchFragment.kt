@@ -25,21 +25,43 @@ class SearchFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        var i = 0
         val ma = activity as MainActivity
-        var ca3 = ma.searchPlaceResponse!!.data.get(0).category3
+        val spr= ma.searchPlaceResponse!!.data
+        var ispermit = spr.get(i).ispermit
+        var ca3 = spr.get(i).category3
 
-        if (ca3.equals("식당")) {
+        //var data1: MutableList<String> = mutableListOf()
+        var data1: MutableList<String> = mutableListOf()
+        var data: MutableList<List<String>> = mutableListOf(data1)
 
-        } else if (ca3.equals("카페")) {
-
-        } else if (ca3.equals("동물병원")){
-
-        } else if (ca3.equals("동물약국")){
-
-        } else if (ca3.equals("여행지")){
+        for (i in 0 until spr.size){
 
         }
 
+        if (ispermit.equals("동반가능")){
+            if (ca3.equals("식당")) {
+                //data1. add(ma.searchPlaceResponse!!.data.get(0).placeName)
+                data1.add(spr.get(i).placeName)
+                data1.add(spr.get(i).area)
+                data1.add(spr.get(i).latitude)
+                data1.add(spr.get(i).longitude)
+
+            } else if (ca3.equals("카페")) {
+
+            } else if (ca3.equals("동물병원")) {
+
+            } else if (ca3.equals("동물약국")) {
+
+            } else if (ca3.equals("여행지")) {
+
+            }
+        }
+
+
+        binding.restaurant.setOnClickListener {
+            Toast.makeText(context, "$data1", Toast.LENGTH_SHORT).show()
+        }
     }
 
 
