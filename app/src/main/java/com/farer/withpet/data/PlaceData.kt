@@ -9,6 +9,7 @@ data class Place(
     @SerializedName("카테고리1") var category1:String,
     @SerializedName("카테고리2") var category2:String,
     @SerializedName("카테고리3") var category3:String,
+    @SerializedName("시도 명칭") var area:String,
     @SerializedName("위도") var latitude:String,
     @SerializedName("경도") var longitude:String,
     @SerializedName("도로명주소") var roadAddress:String,

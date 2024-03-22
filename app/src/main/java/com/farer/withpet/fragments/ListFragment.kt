@@ -24,9 +24,9 @@ class ListFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val mainActivity:MainActivity = activity as MainActivity
-        mainActivity.searchPlaceResponse ?: return
+        val ma:MainActivity = activity as MainActivity
+        ma.searchPlaceResponse ?: return
 
-        binding.recyclerView.adapter= RecyclerAdapter(requireContext(), mainActivity.searchPlaceResponse!!.data)
+        binding.recyclerView.adapter= RecyclerAdapter(requireContext(), ma.searchPlaceResponse!!.data)
     }
 }

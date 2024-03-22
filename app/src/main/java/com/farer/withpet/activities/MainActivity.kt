@@ -18,6 +18,7 @@ import com.farer.withpet.fragments.SearchFragment
 import com.farer.withpet.R
 import com.farer.withpet.data.Place
 import com.farer.withpet.databinding.ActivityMainBinding
+import com.farer.withpet.fragments.LoginFragment
 import com.farer.withpet.network.RetrofitHelper
 import com.farer.withpet.network.RetrofitService
 import com.google.android.gms.location.FusedLocationProviderClient
@@ -58,7 +59,7 @@ class MainActivity : AppCompatActivity() {
                 R.id.menu_bnv_list -> supportFragmentManager.beginTransaction().replace(R.id.container_fragment, ListFragment()).commit()
                 R.id.menu_bnv_map -> supportFragmentManager.beginTransaction().replace(R.id.container_fragment, MapFragment()).commit()
                 R.id.menu_bnv_search -> supportFragmentManager.beginTransaction().replace(R.id.container_fragment, SearchFragment()).commit()
-                //MyAccount Fragment 추가
+                R.id.menu_bnv_myAccount -> supportFragmentManager.beginTransaction().replace(R.id.container_fragment, LoginFragment()).commit()
             }
 
             true
@@ -83,6 +84,8 @@ class MainActivity : AppCompatActivity() {
 
             myLocation= p0.lastLocation
             locationProviderClient.removeLocationUpdates(this)
+
+            searchPlace()
         }
     }
 
@@ -106,7 +109,7 @@ class MainActivity : AppCompatActivity() {
         if (it) requestMyLocation()
         else Toast.makeText(this, "위치 정보를 제공하지 않아, 검색 기능 사용이 제한됩니다.", Toast.LENGTH_SHORT).show()
     }
-    private fun searchPlace(){
+    public fun searchPlace(){
         val retrofit= RetrofitHelper.getRetrofitInstance("https://api.odcloud.kr")
         val retrofitService= retrofit.create(RetrofitService::class.java)
         val call= retrofitService.searchPlace("시설명", "도로명주소")
@@ -114,8 +117,10 @@ class MainActivity : AppCompatActivity() {
             override fun onResponse(call: Call<PlaceData>, response: Response<PlaceData>) {
                 searchPlaceResponse= response.body()
 
-                val data: List<Place>?= searchPlaceResponse?.data
-                AlertDialog.Builder(this@MainActivity).setMessage("${data?.get(0)?.placeName}").create().show()
+                binding.bnv.selectedItemId= R.id.menu_bnv_list
+
+                //val data: List<Place>?= searchPlaceResponse?.data
+                //AlertDialog.Builder(this@MainActivity).setMessage("${data?.get(0)?.placeName}").create().show()
 
             }
 
@@ -125,7 +130,7 @@ class MainActivity : AppCompatActivity() {
 
         })
 
-        //데이터가 제대로 불러왔는지 테스트
+        //데이터를 제대로 불러왔는지 테스트
 //        val call= retrofitService.searchPlaceToString("시설명", "도로명주소")
 //        call.enqueue(object : Callback<String>{
 //            override fun onResponse(call: Call<String>, response: Response<String>) {
