@@ -34,50 +34,71 @@
         android:orientation="horizontal"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp">
+
         <TextView
-            android:id="@+id/restaurant"
+            android:id="@+id/cafe"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="식당"
+            android:text="카페"
             android:padding="4dp"
             android:textSize="12sp"
             android:clickable="true"
             android:focusable="true"
             android:background="?attr/selectableItemBackground"/>
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="카페"
-            android:padding="4dp"
-            android:textSize="12sp"/>
-        <TextView
+            android:id="@+id/hospital"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="병원"
             android:padding="4dp"
             android:textSize="12sp"/>
         <TextView
+            android:id="@+id/pharmacy"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="약국"
             android:padding="4dp"
             android:textSize="12sp"/>
         <TextView
+            android:id="@+id/salon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="미용실"
+            android:padding="4dp"
+            android:textSize="12sp"/>
+        <TextView
+            android:id="@+id/market"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="반려동물용품"
+            android:padding="4dp"
+            android:textSize="12sp"/>
+        <TextView
+            android:id="@+id/consignment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="위탁관리"
+            android:padding="4dp"
+            android:textSize="12sp"/>
+        <TextView
+            android:id="@+id/travel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="여행지"
             android:padding="4dp"
             android:textSize="12sp"/>
         <TextView
+            android:id="@+id/pension"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="펜션"
             android:padding="4dp"
             android:textSize="12sp"/>
         <TextView
+            android:id="@+id/restaurant"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="공원"
+            android:text="식당"
             android:padding="4dp"
             android:textSize="12sp"/>
     </LinearLayout>

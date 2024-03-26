@@ -14,8 +14,8 @@ interface RetrofitService {
         @Query("시설명") placeName: String,
         @Query("도로명주소") roadAddress: String) : Call<String>
 
-    @GET("/api/15111389/v1/uddi:41944402-8249-4e45-9e9d-a52d0a7db1cc?page=1" +
-            "&perPage=10" +
+    @GET("/api/15111389/v1/uddi:41944402-8249-4e45-9e9d-a52d0a7db1cc?page=0" +
+            "&perPage=0" +
             "&serviceKey=nTNr7pK9yaijM64I%2Filv9YhckDQONe53mIfzg%2BIe5uOSVOUP2XcJGILxbysi5m3u3wOHkWFZjIaGjBvVW4vbiw%3D%3D")
     fun searchPlace(
         @Query("시설명") placeName:String,
